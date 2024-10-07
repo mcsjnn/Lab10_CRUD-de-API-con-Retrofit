@@ -5,13 +5,14 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.example.lab10.ui.theme.Lab10Theme
+import com.tecsup.lab10.view.SeriesApp
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material3.Text
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,10 +21,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             Lab10Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    Column {
+                        ScreenInicio()
+                        SeriesApp()
+                    }
                 }
             }
         }
@@ -31,17 +32,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Lab10Theme {
-        Greeting("Android")
-    }
+fun ScreenInicio() {
+    // Puedes agregar cualquier contenido aquí
+    Text(text = "Pantalla de Inicio")
 }
